@@ -1,83 +1,118 @@
 
-def choose_madlib():
-     """
-    set_choice = input("Which madlibs would you like to do? /n)
-    if set_choice == 1:
-        place_range = 1
-        adjective_range = 4
-        verb_range = 0
-        adverb_range = 0
-        noun_range = 5
-        ing_verb_range = 1
-    elif set_choice == 2:
-    """
 
 def play_madlibs():
+    while True:
+        set_choice = input("Which mad libs would you like to do? Press A, B or C \n").upper()
+        if set_choice == "A":
+            place_len = 1
+            adj_len = 4
+            pr_verb_len = 1
+            pst_verb_len = 1
+            noun_len = 2
+            pl_noun_len = 1
+            excl_len = 1
+            person_len = 1
+            num_len = 1
+            break
+        elif set_choice == "B":
+            place_len = 1
+            adj_len = 4
+            pr_verb_len = 1
+            pst_verb_len = 2
+            noun_len = 1
+            pl_noun_len = 1
+            excl_len = 1
+            person_len = 1
+            num_len = 1
+            break
+        else:
+            place_len = 1
+            adj_len = 3
+            pr_verb_len = 0
+            pst_verb_len = 2
+            noun_len = 2
+            pl_noun_len = 1
+            excl_len = 1
+            person_len = 1
+            num_len = 1
+            break
+    
     place = []
     adjective = []
     present_verb = []
     past_verb = []
-    adverb = []
     noun = []
     plural_noun = []
     exclaimation = []
     person = []
-    ing_verb = []
+    number = []
     while True:
-        for i in range(1):
+        for i in range(place_len):
             place_input = input("Please enter a place: \n")
             place.append(place_input)
-        for i in range(4):
+        for i in range(adj_len):
             adjective_input = input("Please enter an adjective: \n")
             adjective.append(adjective_input)
-        for i in range(0):
-            verb_input = input("Please enter a verb: \n")
-            verb.append(verb_input)
-        for i in range(0):
-            adverb_input = input("Please enter an adverb: \n")
-            adverb.append(adverb_input)
-        for i in range(5):
+        for i in range(pr_verb_len):
+            pr_verb_input = input("Please enter a present tense verb: \n")
+            present_verb.append(pr_verb_input)
+        for i in range(pst_verb_len):
+            pst_verb_input = input("Please enter a past tense verb: \n")
+            past_verb.append(pst_verb_input)
+        for i in range(noun_len):
             noun_input = input("Please enter a noun: \n")
             noun.append(noun_input)
-        for i in range(1):
-            ing_verb_input = input("Please enter a verb ending in -ing: \n")
-            ing_verb.append(ing_verb_input)
-
-        print(f"""
-        One {adjective[0]} morning, I woke up and decided to spend the day at the {place[0]}.
-        I packed my {noun[0]}, {adjective[1]} {noun[2]}, and a delicious {noun[3]}. 
-        As soon as I arrived, I was amazed by the {adjective[2]} scenery. 
-        I spent the day {ing_verb[0]} and even saw a {noun[4]}! It was the most {adjective[3]} day ever.
-        """)
+        for i in range(pl_noun_len):
+            pl_noun_input = input("Please enter a plural noun: \n")
+            plural_noun.append(pl_noun_input)
+        for i in range(excl_len):
+            excl_input = input("Please enter an exclaimation: \n")
+            exclaimation.append(excl_input)
+        for i in range(person_len):
+            person_input = input("Please enter a person: \n")
+            person.append(person_input)
+        for i in range(num_len):
+            num_input = input("Please enter a number: \n")
+            number.append(num_input)
         break
+    def print_madlibs():
+        if set_choice == "A":
+        
+            print(f"""
+            One {adjective[0]} morning, I packed my {noun[0]} and decided to {present_verb[0]} at the beach. 
+            I walked through the {adjective[1]} sand and found a perfect {place[0]} to lay down my {adjective[2]} towel. 
+            The waves were crashing, and the seagulls were flying overhead. 
+            I even saw a group of {plural_noun[0]} building a sandcastle.
+            I couldn't resist the temptation to go for a swim. 
+            I {past_verb[0]} into the water and felt the {adjective[3]} waves splashing all around me. 
+            It was so refreshing! Afterwards, I enjoyed a delicious picnic, and I couldn't help but shout, "{exclaimation[0]}!" 
+            The whole beach seemed to join in the celebration, and even {person[0]} showed up to join the fun.
+            I spent {number[0]} hours at the beach and when it was time to leave, I felt as happy as a {noun[1]}.
+            """)
+        elif set_choice =="B":
+            print(f"""
+            One {adjective[0]} day, my friends planned a surprise birthday party for me. 
+            They told me to {present_verb[0]} them at the {place[0]} and act completely surprised when I arrived. 
+            I {past_verb[0]} to the venue, and when I walked in, everyone yelled, "{exclaimation[0]}!"
+            The room was decorated with {adjective[1]} balloons and had a {adjective[2]} {noun[0]} on the table.
+            My friends had even brought some {plural_noun[0]} to play games. We laughed, danced, and {past_verb[0]} until late in the night. 
+            It was the most {adjective[3]} birthday ever!
+            It was a day I'll cherish forever, thanks to my wonderful friends, especially {person[0]} who organized everything. 
+            I can't believe I'm now {number[0]} years old!
+            """)
 
-"""
-One [adj] morning, I packed my [noun] and decided to [prsnt verb] at the beach. 
-I walked [adv] through the sand and found a perfect [place] to lay down my [adj] towel. 
-The waves were crashing, and the seagulls were flying overhead. 
-I even saw a group of [pl noun] building a sandcastle.
-I couldn't resist the temptation to go for a swim. 
-I [pst verb] into the water and felt the [adj] waves splashing all around me. 
-It was so refreshing! Afterward, I enjoyed a delicious picnic, and I couldn't help but shout, "[excl]!" 
-The whole beach seemed to join in the celebration, and even [person] showed up to join the fun.
-I spent [num] hours at the beach, and when it was time to leave, I felt like a happy [noun].
+        else:
+            print(f"""
+            One {adjective[0]} night, I decided to explore a haunted house with {person[0]}. 
+            We entered the house, {past_verb[0]} and looked all around us. 
+            The first room we entered was the {adjective[1]} room, and it was filled with {plural_noun[0]}.
+            I could swear I saw a {noun[0]} moving in the shadows. 
+            Suddenly, we heard a noise and {past_verb[1]} out of the house as fast as our {adjective[2]} legs could carry us, shouting, "{exclaimation[0]}!"
+            Later I found out that the house was not just haunted; it was just home to a {noun[1]}! 
+            I'll never forget that {number[0]} minute adventure in the spooky old house. 
+            I was so relieved when I finally made it back to my own {place[0]}.
+            """)
+    print_madlibs()
+    
 
-One [adj] day, my friends planned a surprise birthday party for me. 
-They told me to meet them at the [place] and act completely surprised when I arrived. 
-I [pst verb] to the venue, and when I walked in, everyone yelled, "[excl]!"
-The room was decorated with [place] balloons and had a [adj] cake on the table.
-My friends had even brought some [pl noun] to play games. We laughed, danced, and [pst verb] until late in the night. 
-It was the most [adj] birthday ever!
-It was a day I'll cherish forever, thanks to my wonderful friends, especially [person] who organized everything. 
-I can't believe I'm now [num] years old!
-
-One [adj] night, I decided to explore a [adj] haunted haunted. I entered the house, [prsnt verb] and looked [adv] around me. 
-The first room I entered was the [adj] room, and it was filled with [pl noun].
-As I walked through the house, I heard strange noises and felt a chill in the air. 
-I could swear I saw a [noun] moving in the shadows. Suddenly, I [pst verb] and ran out of the house as fast as my [adj] legs could carry me, shouting, "[excl]!"
-It turns out, the house was not just haunted; it was home to a [noun]! 
-I'll never forget that 12-minute adventure in the spooky old house. I was so relieved when I finally made it back to my own [place].
-
-"""
-
-#play_madlibs() 
+play_madlibs() 
